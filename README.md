@@ -1,1 +1,1 @@
-# My-little-gorilla-.github.io
+# My-little-gorilla.github.io
