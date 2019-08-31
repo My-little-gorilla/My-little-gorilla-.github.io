@@ -100,23 +100,7 @@
     <div class="slaider">
       <ul class="slaider__list">
         <li class="slaider__item">
-          <h2 class="slaider__name">HANDMADE BICYCLE1</h2>
-          <p class="slaider__description">You<span class="slaider__name-yellow">create</span>the
-            <span class="slaider__name-yellow">journey</span>, we supply the
-            <span class="slaider__name-yellow">parts</span>.
-          </p>
-          <a href="#" class="slaider__link">SHOP BIKES</a>
-        </li>
-        <li class="slaider__item">
-          <h2 class="slaider__name">HANDMADE BICYCLE2</h2>
-          <p class="slaider__description">You<span class="slaider__name-yellow">create</span>the
-            <span class="slaider__name-yellow">journey</span>, we supply the
-            <span class="slaider__name-yellow">parts</span>.
-          </p>
-          <a href="#" class="slaider__link">SHOP BIKES</a>
-        </li>
-        <li class="slaider__item">
-          <h2 class="slaider__name">HANDMADE BICYCLE3</h2>
+          <h2 class="slaider__name">HANDMADE BICYCLE 1</h2>
           <p class="slaider__description">You
             <span class="slaider__name-yellow"> create </span>
             the
@@ -127,7 +111,7 @@
           <a href="#" class="slaider__link">SHOP BIKES</a>
         </li>
         <li class="slaider__item">
-          <h2 class="slaider__name">HANDMADE BICYCLE3</h2>
+          <h2 class="slaider__name">HANDMADE BICYCLE 2</h2>
           <p class="slaider__description">You
             <span class="slaider__name-yellow"> create </span>
             the
@@ -138,7 +122,7 @@
           <a href="#" class="slaider__link">SHOP BIKES</a>
         </li>
         <li class="slaider__item">
-          <h2 class="slaider__name">HANDMADE BICYCLE3</h2>
+          <h2 class="slaider__name">HANDMADE BICYCLE 3</h2>
           <p class="slaider__description">You
             <span class="slaider__name-yellow"> create </span>
             the
@@ -149,7 +133,7 @@
           <a href="#" class="slaider__link">SHOP BIKES</a>
         </li>
         <li class="slaider__item">
-          <h2 class="slaider__name">HANDMADE BICYCLE3</h2>
+          <h2 class="slaider__name">HANDMADE BICYCLE 4</h2>
           <p class="slaider__description">You
             <span class="slaider__name-yellow"> create </span>
             the
@@ -160,7 +144,7 @@
           <a href="#" class="slaider__link">SHOP BIKES</a>
         </li>
         <li class="slaider__item">
-          <h2 class="slaider__name">HANDMADE BICYCLE3</h2>
+          <h2 class="slaider__name">HANDMADE BICYCLE 5</h2>
           <p class="slaider__description">You
             <span class="slaider__name-yellow"> create </span>
             the
@@ -171,7 +155,7 @@
           <a href="#" class="slaider__link">SHOP BIKES</a>
         </li>
         <li class="slaider__item">
-          <h2 class="slaider__name">HANDMADE BICYCLE3</h2>
+          <h2 class="slaider__name">HANDMADE BICYCLE 6</h2>
           <p class="slaider__description">You
             <span class="slaider__name-yellow"> create </span>
             the
@@ -182,7 +166,7 @@
           <a href="#" class="slaider__link">SHOP BIKES</a>
         </li>
         <li class="slaider__item">
-          <h2 class="slaider__name">HANDMADE BICYCLE3</h2>
+          <h2 class="slaider__name">HANDMADE BICYCLE 7</h2>
           <p class="slaider__description">You
             <span class="slaider__name-yellow"> create </span>
             the
@@ -193,7 +177,7 @@
           <a href="#" class="slaider__link">SHOP BIKES</a>
         </li>
         <li class="slaider__item">
-          <h2 class="slaider__name">HANDMADE BICYCLE3</h2>
+          <h2 class="slaider__name">HANDMADE BICYCLE 8</h2>
           <p class="slaider__description">You
             <span class="slaider__name-yellow"> create </span>
             the
@@ -228,7 +212,7 @@
     var slides = document.querySelectorAll(".slaider__item");
     var slider = document.querySelector(".slaider__list");
     var rect = slider.getBoundingClientRect();
-    var total = 0;
+    var f = 0;
 
 
      var startPosition = function () {
@@ -238,26 +222,30 @@
      }()
 
 
-    var getSlidesArr = function(singh) {
-      total += rect.width;
-    }
-
     var slideTranslate = function(singh) {
       slider.style.transform += 'translateX(' + singh + rect.width + 'px' + ')';
     }
 
+
     buttonRight.addEventListener('click', function() {
-      slideTranslate('');
-      getSlidesArr();
-    });
-    buttonLeft.addEventListener('click', function() {
       slideTranslate('-');
-      getSlidesArr();
+      f++;
+      if (f >= slides.length) {
+        f = 0;
+        slider.style.transform = 'translateX(0)';
+      }
+
     });
 
-    // buttonRight.addEventListener('click', function() {
-    //   slideTranslate(false);
-    // });
+    buttonLeft.addEventListener('click', function() {
+      slideTranslate('');
+      f--;
+      if (f < 0) {
+        f = 0;
+        slider.style.transform = 'translateX(0)';
+      }
+
+    });
   </script>
 </body>
 
