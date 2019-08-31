@@ -203,7 +203,7 @@
   </header>
   <main class="main">
     <section class="categories">
-      <h2 class="categories__title">TITLE CATEGORIES</h2>
+      <h2 class="categories__title">CATEGORIES</h2>
       <ul class="categories__list">
         <li class="categories__item">
           <h3 class="categories__name">FIXED / SINGLE SPEED</h3>
@@ -226,46 +226,8 @@
   </main>
   <script src="js/setup.js">
   </script>
-  <script type="text/javascript">
-    var buttonLeft = document.querySelector(".slaider__button--left");
-    var buttonRight = document.querySelector(".slaider__button--right");
-    var slides = document.querySelectorAll(".slaider__item");
-    var slider = document.querySelector(".slaider__list");
-    var rect = slider.getBoundingClientRect();
-    var f = 0;
+  <script src="js/slider.js">
 
-
-     var startPosition = function () {
-       for (var i = 0; i < slides.length; i++) {
-         slides[i].style.transform = 'translateX(' + (i + '00') + '%' + ')';
-       }
-     }()
-
-
-    var slideTranslate = function(singh) {
-      slider.style.transform += 'translateX(' + singh + rect.width + 'px' + ')';
-    }
-
-
-    buttonRight.addEventListener('click', function() {
-      slideTranslate('-');
-      f++;
-      if (f >= slides.length) {
-        f = 0;
-        slider.style.transform = 'translateX(0)';
-      }
-
-    });
-
-    buttonLeft.addEventListener('click', function() {
-      slideTranslate('');
-      f--;
-      if (f < 0) {
-        f = 0;
-        slider.style.transform = 'translateX(0)';
-      }
-
-    });
   </script>
 </body>
 
